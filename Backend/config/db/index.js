@@ -3,11 +3,7 @@ const mongoose = require("mongoose");
 async function connect() {
   try {
     await mongoose.connect(
-      "mongodb+srv://Hoang145:Anhongdo20@cluster0.lwrnk8h.mongodb.net/DiscordBot",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
+      "mongodb+srv://Hoang145:Anhongdo20@cluster0.lwrnk8h.mongodb.net/?retryWrites=true&w=majorityDiscordBot"
     );
     console.log("connnect successful");
   } catch (error) {
