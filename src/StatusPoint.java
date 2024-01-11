@@ -1,8 +1,15 @@
-package main;
 import java.awt.*;
 
-
-public class Marker extends Rectangle {
+/**
+ * Battleship
+ * Author: Peter Mitchell (2021)
+ *
+ * Marker class:
+ * Represents a simple coloured rectangle that can be either
+ * shown or hidden, and will change colour based on whether
+ * it is representing the location where a ship is.
+ */
+public class StatusPoint extends Rectangle {
     /**
      * The colour to show when a ship is located at this marker.
      */
@@ -34,7 +41,7 @@ public class Marker extends Rectangle {
      * @param width Width of the marker's cell.
      * @param height Height of the marker's cell.
      */
-    public Marker(int x, int y, int width, int height) {
+    public StatusPoint(int x, int y, int width, int height) {
         super(x, y, width, height);
         reset();
     }
