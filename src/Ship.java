@@ -33,9 +33,9 @@ public class Ship {
    
     public void paint(Graphics g) {
         if(shipPlacementColour == ShipPlacementColour.Placed) {
-            g.setColor(destroyedSections >= segments ? Color.RED : Color.DARK_GRAY);
+            g.setColor(destroyedSections >= segments ? Color.RED : Color.BLACK);
         } else {
-            g.setColor(shipPlacementColour == ShipPlacementColour.Valid ? Color.GREEN : Color.RED);
+            g.setColor(shipPlacementColour == ShipPlacementColour.Valid ? Color.YELLOW : Color.RED);
         }
         if(isSideways) paintHorizontal(g);
         else paintVertical(g);
@@ -107,6 +107,12 @@ public class Ship {
          g.fillPolygon(new int[]{drawPosition.x+ShipDefinition.CELL_SIZE/6,drawPosition.x+ShipDefinition.CELL_SIZE,drawPosition.x+ShipDefinition.CELL_SIZE},
                   new int[]{drawPosition.y+ShipDefinition.CELL_SIZE/4,boatTopY,boatTopY+boatWidth},3);
         g.fillRect(drawPosition.x+ShipDefinition.CELL_SIZE,boatTopY,
+                (int)(ShipDefinition.CELL_SIZE * (segments-1.2)), boatWidth);
+        g.setColor(Color.BLACK);
+        g.drawPolygon(new int[]{drawPosition.x+ShipDefinition.CELL_SIZE/6,drawPosition.x+ShipDefinition.CELL_SIZE,drawPosition.x+ShipDefinition.CELL_SIZE},
+                  new int[]{drawPosition.y+ShipDefinition.CELL_SIZE/4,boatTopY,boatTopY-2+boatWidth},3);;
+        g.setColor(Color.BLACK);
+        g.drawRect(drawPosition.x+ShipDefinition.CELL_SIZE,boatTopY,
                 (int)(ShipDefinition.CELL_SIZE * (segments-1.2)), boatWidth);
     }
 }

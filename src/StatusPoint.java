@@ -13,7 +13,7 @@ public class StatusPoint extends Rectangle {
     /**
      * The colour to show when a ship is located at this marker.
      */
-    private final Color HIT_COLOUR = new Color(219, 23, 23, 180);
+    private final Color HIT_COLOUR = new Color(15, 255,0);
     /**
      * The colour to show when there is no ship at this marker.
      */

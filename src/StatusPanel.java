@@ -1,22 +1,21 @@
 import java.awt.*;
-
-import javax.swing.ImageIcon;
+import java.awt.geom.AffineTransform;
 
 
  
 public class StatusPanel extends Rectangle{
     
-    private final Font font = new Font("Arial", Font.BOLD, 20);
+    private final Font font = new Font("Dialog", Font.BOLD, 20);
     
-    private final String placingShipLine1 = "You have 5 ships. Place yours!";
+    private final String placingShipLine1 = "";
     
     private final String placingShipLine2 = "";
    
-    private final String gameOverLossLine = "Game Over! You Lost ";
+    private final String gameOverLossLine = "You Lost ";
    
     private final String gameOverWinLine = "You won!";
     
-    private final String gameOverBottomLine = "Press R to restart.";
+    private final String gameOverBottomLine = "";
 
    
     private String topLine;
@@ -55,16 +54,22 @@ public class StatusPanel extends Rectangle{
 
     
     public void paint(Graphics g) {
-        
-        g.setColor(new Color(70,113,255));
+        g.setFont(new Font(Font.DIALOG, Font.BOLD, 10));
+        g.setColor(Color.black);
         
         g.fillRect(position.x, position.y, width, height);
-        
-        g.setFont(new Font(Font.SERIF, Font.BOLD, 20));
         int strWidth = g.getFontMetrics().stringWidth(topLine);
-        g.drawString(topLine, position.x+width/2-strWidth/2, position.y+20);
         strWidth = g.getFontMetrics().stringWidth(bottomLine);
-        g.drawString(bottomLine, position.x+width/2-strWidth/2, position.y+40);
+        
+        
+       
+        
+        g.drawString(topLine, 305, position.y-250);
+        
+        g.drawString(bottomLine,305, position.y+100);
+         
+        
+        
         Image backgroundImage = Toolkit.getDefaultToolkit().getImage("F:\\\\xstk\\\\ban tao\\\\Battleship-main\\\\Battleship\\\\img\\\\status.png");
         g.drawImage(backgroundImage, position.x-3, position.y, null);
         

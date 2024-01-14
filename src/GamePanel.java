@@ -128,8 +128,8 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
             updateShipPlacement(tempPlacingPosition);
         } else {
             gameState = GameState.FiringShots;
-            statusPanel.setTopLine("Attack the Computer!");
-            statusPanel.setBottomLine("Destroy all Ships to win!");
+            statusPanel.setTopLine("Bot Board");
+            statusPanel.setBottomLine("Player Board");
         }
     }
 
@@ -154,7 +154,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         if(hit && computer.getMarkerAtPosition(targetPosition).getAssociatedShip().isDestroyed()) {
             destroyed = "(Destroyed)";
         }
-        statusPanel.setTopLine("Player " + hitMiss + " " + targetPosition + destroyed);
+        statusPanel.setTopLine("P:" + hitMiss + " " + targetPosition + destroyed);
         if(computer.areAllShipsDestroyed()) {
             // Player wins!
             gameState = GameState.GameOver;
@@ -171,7 +171,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         if(hit && player.getMarkerAtPosition(aiMove).getAssociatedShip().isDestroyed()) {
             destroyed = "(Destroyed)";
         }
-        statusPanel.setBottomLine("Computer " + hitMiss + " " + aiMove + destroyed);
+        statusPanel.setBottomLine("C:" + hitMiss + " " + aiMove + destroyed);
         if(player.areAllShipsDestroyed()) {
             // Computer wins!
             gameState = GameState.GameOver;
